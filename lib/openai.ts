@@ -1,3 +1,4 @@
+// lib/openai.ts
 import OpenAI from 'openai';
 
 const openai = new OpenAI({
@@ -23,7 +24,7 @@ export async function findMatchingAgent(input: string, agents: any[]) {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4-turbo-preview",
+      model: "gpt-4o-mini",  // ← ここを変更
       messages: [
         {
           role: "system",
